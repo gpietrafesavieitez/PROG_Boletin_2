@@ -77,8 +77,7 @@ public class Boletin_2_1a5 {
         sueldoBruto = sueldoFijo + (0.05 * importeVentas) + (2 * kiloMetraje) + (30* diasDesplaza);
         sueldoLiquido = sueldoBruto - (36 + 0.18 * sueldoBruto);
         
-        System.out.println("- El sueldo bruto es de: " + sueldoBruto);
-        System.out.println("- El sueldo liquido es de: " + sueldoLiquido);
+        System.out.println("- El sueldo bruto es de: " + sueldoBruto + " euros y el líquido es de " + sueldoLiquido + " euros.");
     }
     
     public static void main(String[] args) {
@@ -88,13 +87,13 @@ public class Boletin_2_1a5 {
             System.out.println("\n[1] Ejercicio 1\n[2] Ejercicio 2\n[3] Ejercicio 3\n[4] Ejercicio 4\n[5] Ejercicio 5\n[0] Salir\n"); opcion = leer.nextInt();
             
             switch(opcion){
-                case 0: System.out.println("Hasta luego!"); break;
+                case 0: System.out.print("Hasta luego!"); break;
                 case 1: ejer1(); break;
                 case 2: ejer2(); break;
                 case 3: ejer3(); break;
                 case 4: ejer4(); break;
                 case 5: ejer5(); break;
-                default: System.out.println("Selecciona una opción válida!"); break;
+                default: System.out.print("Selecciona una opción válida!"); break;
             }
             
         }while(opcion != 0);
