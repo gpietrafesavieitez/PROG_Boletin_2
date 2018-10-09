@@ -1,44 +1,44 @@
 package boletin_2_1a5;
 import java.util.Scanner;
 
-public class Boletin_2_1a5 { //Comentario de prueba 2
+public class Boletin_2_1a5 {
     
-public static Scanner leer = new Scanner(System.in);
+    public static Scanner leer = new Scanner(System.in);
 
     //Porcentaje compra
     public static void ejer1(){
-        float precioTarifa,precioPagado,descuento;
+        float precioTarifa, precioPagado, descuento;
         System.out.print("Introduce el precio de la tarifa: "); precioTarifa = leer.nextFloat();
         System.out.print("Introduce el precio pagado: "); precioPagado = leer.nextFloat();
         descuento = 100 - ((precioPagado * 100) / precioTarifa);
-        System.out.println("El descuento aplicado ha sido del " + descuento + "%.");
+        System.out.println("- El descuento aplicado ha sido del " + descuento + "%.");
     }
     
     //Temperatura Fahrenheit & Kelvin
     public static void ejer2(){
-        float gradosCelsius,gradosFahrenheit,gradosKelvin;
+        float gradosCelsius, gradosFahrenheit, gradosKelvin;
         System.out.print("Introduce los grados centígrados: "); gradosCelsius = leer.nextFloat();
-        System.out.println(gradosCelsius + " grados Centígrados son aproximadamente " + ((gradosCelsius * 9 / 5) + 32) + " grados Fahrenheit y " + (gradosCelsius + 273.15) + " grados Kelvin.");
+        System.out.println("- " + gradosCelsius + " grados Centígrados son aproximadamente " + ((gradosCelsius * 9 / 5) + 32) + " grados Fahrenheit y " + (gradosCelsius + 273.15) + " grados Kelvin.");
     }
     
     //Conversión a euros
     public static void ejer3(){
-        int cien,veinte,cinco,uno;
+        int cien, veinte, cinco, uno;
         System.out.print("Billetes de 100 euros: "); cien = leer.nextInt();
-        System.out.print("\nBilletes de 20 euros: "); veinte = leer.nextInt();
-        System.out.print("\nBilletes de 5 euros: "); cinco = leer.nextInt();
-        System.out.print("\nMonedas de 1 euro: "); uno = leer.nextInt();
-        System.out.println("La cantidad total es de " + ((100 * cien) + (20 * veinte) + (5 * cinco) + (1 * uno)) + " euros.");
+        System.out.print("Billetes de 20 euros: "); veinte = leer.nextInt();
+        System.out.print("Billetes de 5 euros: "); cinco = leer.nextInt();
+        System.out.print("Monedas de 1 euro: "); uno = leer.nextInt();
+        System.out.println("- La cantidad total es de " + ((100 * cien) + (20 * veinte) + (5 * cinco) + (1 * uno)) + " euros.");
     }
     
     //Conversión a billetes y monedas
     public static void ejer4(){//
-        int cantidad,c = 0;
+        int cantidad, c = 0;
         
         do{
-            System.out.println("Introduce la cantidad a desglosar en euros: ");
+            System.out.print("Introduce la cantidad a desglosar en euros: ");
             while (!leer.hasNextInt()){
-                System.out.println("Valor incorrecto. Introduce la cantidad a desglosar en euros:");
+                System.out.print("Valor incorrecto. Introduce la cantidad a desglosar en euros:");
                 leer.next();
             }
             cantidad = leer.nextInt();
@@ -67,33 +67,36 @@ public static Scanner leer = new Scanner(System.in);
     
     //Sueldo bruto y líquido
     public static void ejer5(){
-        double sueldoFijo,importeVentas,kiloMetraje,diasDesplaza,sueldoBruto,sueldoLiquido;
+        double sueldoFijo, importeVentas, kiloMetraje, diasDesplaza, sueldoBruto, sueldoLiquido;
         
         System.out.print("Introduce el sueldo fijo en euros: "); sueldoFijo = leer.nextFloat();
         System.out.print("Introduce el importe de ventas en euros: "); importeVentas = leer.nextFloat();
-        System.out.print("Introduce los kilómetros:  "); kiloMetraje = leer.nextFloat();
+        System.out.print("Introduce los kilómetros: "); kiloMetraje = leer.nextFloat();
         System.out.print("Introduce los días de desplazamiento: "); diasDesplaza = leer.nextFloat();
         
         sueldoBruto = sueldoFijo + (0.05 * importeVentas) + (2 * kiloMetraje) + (30* diasDesplaza);
         sueldoLiquido = sueldoBruto - (36 + 0.18 * sueldoBruto);
         
-        System.out.println("El sueldo bruto es de: " + sueldoBruto);
-        System.out.println("El sueldo liquido es de: " + sueldoLiquido);
+        System.out.println("- El sueldo bruto es de: " + sueldoBruto);
+        System.out.println("- El sueldo liquido es de: " + sueldoLiquido);
     }
     
     public static void main(String[] args) {
         int opcion;
+        
         do{
-            System.out.println("[1] Ejercicio 1\n[2] Ejercicio 2\n[3] Ejercicio 3\n[4] Ejercicio 4\n[5] Ejercicio 5\n[0] Salir"); opcion = leer.nextInt();
+            System.out.println("\n[1] Ejercicio 1\n[2] Ejercicio 2\n[3] Ejercicio 3\n[4] Ejercicio 4\n[5] Ejercicio 5\n[0] Salir\n"); opcion = leer.nextInt();
+            
             switch(opcion){
+                case 0: System.out.println("Hasta luego!"); break;
                 case 1: ejer1(); break;
                 case 2: ejer2(); break;
                 case 3: ejer3(); break;
                 case 4: ejer4(); break;
                 case 5: ejer5(); break;
-                case 0: System.out.println("Hasta luego!"); break;
-                default: System.out.println("Opción incorrecta!"); break;
+                default: System.out.println("Selecciona una opción válida!"); break;
             }
+            
         }while(opcion != 0);
     }
 }
