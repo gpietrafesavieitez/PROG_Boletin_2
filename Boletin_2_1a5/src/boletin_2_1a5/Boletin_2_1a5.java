@@ -16,7 +16,7 @@ public class Boletin_2_1a5 {
     
     //Temperatura Fahrenheit & Kelvin
     public static void ejer2(){
-        float gradosCelsius, gradosFahrenheit, gradosKelvin;
+        float gradosCelsius;
         System.out.print("Introduce los grados centígrados: "); gradosCelsius = leer.nextFloat();
         System.out.println("- " + gradosCelsius + " grados Centígrados son aproximadamente " + ((gradosCelsius * 9 / 5) + 32) + " grados Fahrenheit y " + (gradosCelsius + 273.15) + " grados Kelvin.");
     }
