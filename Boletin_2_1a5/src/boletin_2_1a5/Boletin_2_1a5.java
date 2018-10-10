@@ -28,7 +28,7 @@ public class Boletin_2_1a5 {
         System.out.print("Billetes de 20 euros: "); veinte = leer.nextInt();
         System.out.print("Billetes de 5 euros: "); cinco = leer.nextInt();
         System.out.print("Monedas de 1 euro: "); uno = leer.nextInt();
-        System.out.println("- La cantidad total es de " + ((100 * cien) + (20 * veinte) + (5 * cinco) + (1 * uno)) + " euros.");
+        System.out.println("- La cantidad total es de " + ((100 * cien) + (20 * veinte) + (5 * cinco) + (uno)) + " euros.");
     }
     
     //Conversión a billetes y monedas
@@ -42,22 +42,22 @@ public class Boletin_2_1a5 {
                 leer.next();
             }
             cantidad = leer.nextInt();
-        }while (cantidad <= 0);
+        }while (cantidad < 0);
         
         while(cantidad - 100 >= 0){
             c++;
             cantidad -= 100;
-        }System.out.println("- " + c + " billete(s) de 100 euros."); c=0;
+        }System.out.println("- " + c + " billete(s) de 100 euros."); c = 0;
 
         while(cantidad - 20 >= 0){
             c++;
             cantidad -= 20;
-        }System.out.println("- " + c + " billete(s) de 20 euros."); c=0;
+        }System.out.println("- " + c + " billete(s) de 20 euros."); c = 0;
 
         while(cantidad - 5 >= 0){
             c++;
             cantidad -= 5;
-        }System.out.println("- " + c + " billete(s) de 5 euros."); c=0;
+        }System.out.println("- " + c + " billete(s) de 5 euros."); c = 0;
 
         while(cantidad - 1 >= 0){
             c++;
@@ -74,7 +74,7 @@ public class Boletin_2_1a5 {
         System.out.print("Introduce los kilómetros: "); kiloMetraje = leer.nextFloat();
         System.out.print("Introduce los días de desplazamiento: "); diasDesplaza = leer.nextFloat();
         
-        sueldoBruto = sueldoFijo + (0.05 * importeVentas) + (2 * kiloMetraje) + (30* diasDesplaza);
+        sueldoBruto = sueldoFijo + (0.05 * importeVentas) + (2 * kiloMetraje) + (30 * diasDesplaza);
         sueldoLiquido = sueldoBruto - (36 + 0.18 * sueldoBruto);
         
         System.out.println("- El sueldo bruto es de: " + sueldoBruto + " euros y el líquido es de " + sueldoLiquido + " euros.");
